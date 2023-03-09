@@ -20,7 +20,7 @@ public class Fish extends Animal implements Illable, Swimable {
 
     @Override
     public int getSwimSpeed() {
-        return 12;
+        return 15;
     }
 
 

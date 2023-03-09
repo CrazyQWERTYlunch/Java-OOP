@@ -22,7 +22,7 @@ public class Duck extends Animal implements Illable, Flyable, Swimable, Speakabl
 
     @Override
     public int getFlightSpeed() {
-        return 0;
+        return 25;
     }
 
 
@@ -34,6 +34,6 @@ public class Duck extends Animal implements Illable, Flyable, Swimable, Speakabl
 
     @Override
     public int getSwimSpeed() {
-        return 0;
+        return 10;
     }
 }
