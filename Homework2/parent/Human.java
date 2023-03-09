@@ -10,7 +10,7 @@ public abstract class Human {
 
     public static int countHuman = 0;
 
-    public Human(String name,String post, int age){
+    public Human(String name,int age,String post){
         this.name = name;
         this.post = post;
         this.age = age;
@@ -18,7 +18,7 @@ public abstract class Human {
     }
 
     public Human(String name,int age){
-        this(name, null, age);
+        this(name, age, null);
     }
     public Human(String name){
         this(name, 0);

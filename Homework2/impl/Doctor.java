@@ -7,16 +7,17 @@ import Homework2.Runnable;
 import Homework2.Swimable;
 
 public class Doctor extends Human implements Illable, Runnable, Swimable, Speakable {
-    public Doctor(String name, String post, int age) {
-        super(name, post, age);
+    public Doctor(String name, int age, String post) {
+        super(name, age, post);
     }
     public Doctor(String name, int age) {
-        super(name, null, age);
+        super(name, age,null);
     }
 
     public Doctor(String name) {
-        super(name, null, 22 );
+        super(name, 22,null );
     }
+
 
     @Override
     public void speak() {
