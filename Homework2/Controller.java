@@ -29,6 +29,8 @@ public class Controller {
     private static void showDoctor() {
         Human doctor = new Doctor("Арсений", 26, "Ветеринар");
         System.out.println(doctor);
+        doctor.speak();
+
 
     }
 }
