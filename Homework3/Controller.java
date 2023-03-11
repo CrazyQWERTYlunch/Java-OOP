@@ -26,7 +26,7 @@ public class Controller {
 
     }
 
-    public static void showComponents(List<Component> components, Set<Component> componentsSet) {
+    private static void showComponents(List<Component> components, Set<Component> componentsSet) {
 
         for (Component component : components) {
             System.out.println(component);
