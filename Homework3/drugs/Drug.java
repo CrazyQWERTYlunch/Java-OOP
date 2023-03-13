@@ -6,9 +6,13 @@ import java.util.List;
 public abstract class Drug implements Iterable<Component>, Comparable<Drug> {
     private List<Component> components;
 
-    @Override// Дикая штука сравнения классов
+    @Override
     public int compareTo(Drug o) {
-        int power = getDrugPower();
+        int  power = getDrugPower();
+        if (Integer.compare(power, o.getDrugPower()) == 0){
+            String name = getDrugName();
+            return name.compareTo(o.getDrugName());
+        }
         return Integer.compare(power, o.getDrugPower());
     }
 
@@ -20,19 +24,17 @@ public abstract class Drug implements Iterable<Component>, Comparable<Drug> {
     }
 
 
-    @Override // Эта херня - анонимный класс, был переопределён класс iterator, который возвращает новый экз. класса
-    // Мы взяли абстрактный класс и сделали его экземпляр без названия типо AbsCl <>
+    @Override
     public Iterator<Component> iterator() {
 
         return new Iterator<Component>() {
-            @Override // В интерфейсе итератора переопределили методы
+            @Override
             public boolean hasNext() { // Проверяет есть ли следующий элемент
                 return index < components.size();
             }
             @Override
             public Component next() {
-                return components.get(index++); //Получить компонент и увеличить индекс
-            }
+                return components.get(index++);}
         };
     }
 
@@ -43,6 +45,14 @@ public abstract class Drug implements Iterable<Component>, Comparable<Drug> {
             power += component.getPower();
         }
         return power;
+    }
+
+    public String getDrugName(){
+        String name = "";
+        for (Component component: components){
+            name += component.getName();
+        }
+        return name;
     }
 
     @Override

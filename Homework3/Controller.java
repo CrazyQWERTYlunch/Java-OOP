@@ -1,6 +1,7 @@
 package Homework3;
 
 import Homework3.drugs.Component;
+import Homework3.drugs.impl.CatDrug;
 import Homework3.drugs.impl.components.Azitron;
 import Homework3.drugs.impl.components.Pinecilin;
 import Homework3.drugs.impl.components.Water;
@@ -37,4 +38,25 @@ public class Controller {
             System.out.println(component);
         }
     }
+
+    public static void compareOfDrugs(){
+        List<Component> componentCat1 = List.of(new Pinecilin("Пинецилин", "5", 12)
+                , new Azitron("Азитрон", "2", 12));
+        List<Component> componentCat2 = List.of(new Water("Вода", "20", 12)
+                , new Azitron("Азитрон", "2", 15));
+        List<Component> componentCat3 = List.of(new Water("Вода", "20", 12)
+                , new Azitron("Пинецилин", "2", 15));
+
+        CatDrug drug1 = new CatDrug(componentCat1);
+        CatDrug drug2 = new CatDrug(componentCat2);
+        CatDrug drug3 = new CatDrug(componentCat3);
+        System.out.println(drug1);
+        System.out.println(drug2);
+        System.out.println(drug3);
+        System.out.println(drug1.compareTo(drug2));
+        System.out.println(drug2.compareTo(drug3));
+
+
+    }
+
 }
